@@ -1,0 +1,22 @@
+{% extends 'common/common.html'%}
+    {%block content%}
+
+
+
+
+    {% for post in posts %}
+<hr>
+    <form action="" method="POST">
+        {%csrf_token%}
+        <div>
+            <p>작성자 : <a href="">{{post.author}}</a></p>
+            <label>내용 : {{post.comment}}</label><br>
+            <label>작성된 시간{{post.created_date}}</label><br>
+            <label>수정된 시간 : {{post.modified_date}}</label><br>
+        </div>
+        <button type="submit">수정</button>
+        <button type="submit">삭제</button>
+    </form>
+    {% endfor %}
+
+{%endblock%}
